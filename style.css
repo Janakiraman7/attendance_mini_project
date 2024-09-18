@@ -1,0 +1,9 @@
+#selection{
+    width: 100vw;
+    height: 8vh;
+    background-color: rgba(176, 244, 244, 0.573);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+}

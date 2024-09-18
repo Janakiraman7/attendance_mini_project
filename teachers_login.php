@@ -45,7 +45,7 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $dbpassword = $row["password"];
 if($inputpassword  == $dbpassword){
-   header("location:teacherpage.html");
+   header("location:timetable.html");
 }else{
   echo'  <script>
 
