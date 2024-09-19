@@ -16,7 +16,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "DELETE FROM stdinfo WHERE regno= '$reg_no' and department='$department' ";
+$sql = "DELETE FROM stdinfo WHERE regno='$reg_no' and department='$department' ";
 if( mysqli_query($conn, $sql)){
     
     header("location:record.html");
