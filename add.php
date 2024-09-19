@@ -21,7 +21,12 @@ if (!$conn) {
 }
 
 $sql = "INSERT into stdinfo (`s.no`, `name`, `regno`, `department`, `year`, `present`, `abscent`, `attendance`) VALUES (NULL, '$name', '$reg_no', '$department', '$year', '$present', '$abscent', '$atttendance') ";
- mysqli_query($conn, $sql);
+if( mysqli_query($conn, $sql)){
+    if(echo '<script>alert("record added sucessfully")</script>';
+    ){
+    header("location:record.html");
+    }
+}
 
 
 
