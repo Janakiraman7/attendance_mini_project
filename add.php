@@ -1,6 +1,6 @@
 <?php
 $reg_no = $_POST["regno"];
-$name = $_POST["name"]
+$name = $_POST["name"];
 $department = $_POST["department"];
 $year = $_POST["year"];
 $present = $_POST["present"];
