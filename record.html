@@ -31,12 +31,43 @@
     
     <div class="recordoption">
       
-        <div class="recordoptions"><button>INSERT</button></div>
-        <div class="recordoptions"><button>UPDATE</button></div>
+        <div class="recordoptions"><button onclick="add()">ADD</button></div>
         <div class="recordoptions"><button>DELETE</button></div>
-        <div class="recordoptions"><button>ADD</button></div>
+        <div class="recordoptions"><button>UPDATE</button></div>
+        <div class="recordoptions"><button>SEARCH</button></div>
     
     </div>
-    <div class="recordform"></div>
+    
+    <div class="recordformcontainer">
+      
+        <div id="recordformcontent">
+          
+            <label>REGISTER NUMBER:</label> <br><br>
+          <label>NAME:</label> <br><br>
+          <label>DEPARTMENT:</label><br><br>
+          <label>YEAR:</label><br><br>
+          <label>NO.OF DAYS PRESENT:</label> <br><br>
+          <label>NO.OF DAYS ABSCENT:</label><br><br> 
+          <label>ATTENDANCE % :</label> <br><br>
+           
+        </div>
+
+        <div id="recordforminput">
+          <form id="recordform" action="" method="post">
+            <input type="text" name="regno" required><br><br>
+            <input type="text" name="name"><br><br>
+            <select style="width: 180px;" name="department" id="department" required><option value="bsc">bsc</option><option value="bca">bca</option><option value="bcm">bcm</option><option value="bcom">bcom</option><option value="bba">bba</option></select><br><br>
+            <input type="number" name="year" required><br><br>
+            <input type="number" name="present"><br><br>
+            <input type="number" name="abscent"><br><br>
+            <input type="text" name="attendance"><br><br>
+           <button id="submitbtn"> <input type="submit"></button>
+
+          </form>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
