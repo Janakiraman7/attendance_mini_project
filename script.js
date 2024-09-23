@@ -7,3 +7,7 @@ function deleterecord()
 {
     document.getElementById("recordform").action="delete.php";
 }
+function updaterecord()
+{
+    document.getElementById("recordform").action="delete.php";
+}
