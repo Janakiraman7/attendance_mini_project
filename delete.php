@@ -22,10 +22,6 @@ if( mysqli_query($conn, $sql)){
     header("location:record.html");
     
 }
-
-
-
-    
-  
+ 
 mysqli_close($conn);
 ?>

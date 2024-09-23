@@ -20,12 +20,12 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "UPDATE `stdinfo` SET `name`=[$name],`regno`=[$reg_no],`department`=[$department],`year`=[$year],`present`=[$present],`abscent`=[$abscent],`attendance`=[$atttendance] WHERE regno='$reg_no' & department='$department' ";
+$sql = "UPDATE stdinfo SET name='$name',regno='$reg_no',department='$department',year='$year',present='$present',abscent='$abscent',attendance='$atttendance' WHERE regno='$reg_no'  ";
 if( mysqli_query($conn, $sql)){
-    mysqli_close($conn);
+   
     header("location:record.html");
     
 }
-    
+mysqli_close($conn);  
 
 ?>

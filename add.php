@@ -22,10 +22,10 @@ if (!$conn) {
 
 $sql = "INSERT into stdinfo (`s.no`, `name`, `regno`, `department`, `year`, `present`, `abscent`, `attendance`) VALUES (NULL, '$name', '$reg_no', '$department', '$year', '$present', '$abscent', '$atttendance') ";
 if( mysqli_query($conn, $sql)){
-    mysqli_close($conn);
+    
     header("location:record.html");
     
 }
-    
+mysqli_close($conn);  
 
 ?>

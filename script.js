@@ -9,5 +9,5 @@ function deleterecord()
 }
 function updaterecord()
 {
-    document.getElementById("recordform").action="delete.php";
+    document.getElementById("recordform").action="update.php";
 }
