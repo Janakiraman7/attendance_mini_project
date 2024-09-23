@@ -31,10 +31,10 @@
     
     <div class="recordoption">
       
-        <div ><button id="add" onclick="add()">ADD</button></div>
-        <div ><button id="delete" onclick="deleterecord()">DELETE</button></div>
-        <div ><button>UPDATE</button></div>
-        <div ><button>SEARCH</button></div>
+        <div ><button id="add" class="btn btn-outline-success" onclick="add()">ADD</button></div>
+        <div ><button id="delete" class="btn btn-outline-success" onclick="deleterecord()">DELETE</button></div>
+        <div ><button class="btn btn-outline-success">UPDATE</button></div>
+        <div ><button class="btn btn-outline-success">SEARCH</button></div>
     
     </div>
     
@@ -55,13 +55,13 @@
         <div id="recordforminput">
           <form id="recordform" action="#" method="post">
             <input type="text" name="regno" required><br><br>
-            <input type="text" name="name"><br><br>
-            <input type="text" name="department" ><br><br>
+            <input type="text" name="name" requiered><br><br>
+            <input type="text" name="department" required><br><br>
             <input type="number" name="year" required><br><br>
             <input type="number" name="present"><br><br>
             <input type="number" name="abscent"><br><br>
             <input type="text" name="attendance"><br><br>
-           <button id="submitbtn" onclick="message()"> <input type="submit"></button>
+            <input type="submit">
 
           </form>
 

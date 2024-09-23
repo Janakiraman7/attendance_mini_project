@@ -8,6 +8,3 @@ function deleterecord()
     document.getElementById("recordform").action="delete.php";
     document.getElementById("delete").style="background-color:green";
 }
-function message{
-    alert("sucessfull!");
-}
