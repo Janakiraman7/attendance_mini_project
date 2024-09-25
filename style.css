@@ -76,3 +76,7 @@ button{
   left: 35vw;
   
 }
+table,th,tr{
+  border:1px solid;
+  border-collapse: collapse;
+}
