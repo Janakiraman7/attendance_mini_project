@@ -76,7 +76,7 @@ button{
   left: 35vw;
   
 }
-table,th,tr{
+table,th,tr,td{
   border:1px solid;
   border-collapse: collapse;
 }
