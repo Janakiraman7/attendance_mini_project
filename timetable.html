@@ -31,9 +31,10 @@
     </nav>
     <div id="selection">
       <div>
-        <label for="year">YEAR:</label>
+        
 
         <select id="year">
+          <option selected disabled>SELECT YEAR</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -41,9 +42,10 @@
       </div>
 
       <div>
-        <label for="department">DEPARTMENT:</label>
+        
 
         <select id="department">
+          <option selected disabled>SELECT DEPARTMENT</optiosn>
           <option>bsc</option>
           <option>bca</option>
           <option>bcom</option>
@@ -55,30 +57,42 @@
         <button id="getbtn">GET</button>
       </div>
     </div>
-    <table>
-      <tr>
-        <th>
-          day
-        </th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-      </tr>
-      <tr>
-        <td id="day">monday</td>
-        <td id="one">period1</td>
-        <td id="two">period2</td>
-        <td id="three">period3</td>
-        <td id="four">period4</td>
-        <td id="five">period5</td>
-        <td id="six">period6</td>
-       
+    <div id="hidetable" style="display: none;">
+    <div class="container mt-3">
+      <table class="table table-sm table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>DAY</th>
+            <th>PERIOD1</th>
+            <th>PERIOD2</th>
+            <th>PERIOD3</th>
+            <th>PERIOD4</th>
+            <th>PERIOD5</th>
+            <th>PERIOD6</th>
+          </tr>
+        </thead>
+        <tr>
+          <td id="m">monday</td>
+          <td id="m1">period1</td>
+          <td id="m2">period2</td>
+          <td id="m3">period3</td>
+          <td id="m4">period4</td>
+          <td id="m5">period5</td>
+          <td id="m6">period6</td>
+        </tr>
+        <tr>
+          <td id="t">tuesday</td>
+          <td id="t1">period1</td>
+          <td id="t2">period2</td>
+          <td id="t3">period3</td>
+          <td id="t4">period4</td>
+          <td id="t5">period5</td>
+          <td id="t6">period6</td>
+        </tr>
 
-      </tr>
-    </table>
+      </table>
+    </div>
+  </div>
     <script src="script.js"></script>
   </body>
 </html>
