@@ -43,7 +43,7 @@ $(document).ready(function(){
                         $('#t4').text(data.result2.period4);
                         $('#t5').text(data.result2.period5);
                         $('#t6').text(data.result2.period6);
-                        $('#W').text(data.result2.day);
+                        $('#W').text(data.result3.day);
                         $('#W1').text(data.result3.period1);
                         $('#W2').text(data.result3.period2); 
                         $('#W3').text(data.result3.period3);

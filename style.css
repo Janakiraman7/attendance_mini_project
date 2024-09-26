@@ -5,19 +5,12 @@
 #selection {
   width: 100vw;
   height: 8vh;
-  background-color: rgba(176, 244, 244, 0.573);
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 2rem;
 }
-ul {
-  display: flex;
-  align-items: center;
-  column-gap: 3rem;
-  padding: 0px;
-  margin: 0px;
-}
+
 
 nav {
   display: flex;
@@ -25,11 +18,9 @@ nav {
   align-items: center;
   width: 100vw;
   height: 10vh;
-  background-color: rgb(169, 226, 233);
+ 
 }
-li {
-  list-style-type: none;
-}
+
 a {
   text-decoration: none;
 }
@@ -55,7 +46,7 @@ button{
 .recordformcontainer{
     width: 79vw;
     height: 89vh;
-    border: 1px solid;
+    
     position: absolute;
     top: 10vh;
     left: 1px;
@@ -63,7 +54,6 @@ button{
 #recordformcontent{
   width: 20vw;
   height:70vh ;
-  
   top: 25vh;
   left: 20vw;
   position: fixed;
@@ -75,8 +65,4 @@ button{
   top: 23vh;
   left: 35vw;
   
-}
-table,th,tr,td{
-  border:1px solid;
-  border-collapse: collapse;
 }
