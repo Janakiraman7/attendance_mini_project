@@ -27,20 +27,10 @@
           </li>
           <li class="nav-item" role="presentation">
             
-            <a href="record.html"><button  class="nav-link active rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">RECORDS</button></a>
+            <a href="record.php"><button  class="nav-link active rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">RECORDS</button></a>
           </li>
         </ul>
       </nav>
-    
-    
-    <div class="recordoption">
-      
-        <div ><button id="add" class="btn btn-outline-primary" onclick="add()">ADD</button></div>
-        <div ><button id="delete" class="btn btn-outline-primary" onclick="deleterecord()">DELETE</button></div>
-        <div ><button class="btn btn-outline-primary" onclick="updaterecord()">UPDATE</button></div>
-      
-    
-    </div>
     
     <div class="recordformcontainer">
       
@@ -57,7 +47,7 @@
         </div>
 
         <div id="recordforminput">
-          <form id="recordform" action="#" method="post">
+          <form id="recordform" action="record.php" method="post">
             <input type="text" name="regno" required><br><br>
             <input type="text" name="name" requiered><br><br>
             <input type="text" name="department" required><br><br>
@@ -65,13 +55,84 @@
             <input type="number" name="present"><br><br>
             <input type="number" name="abscent"><br><br>
             <input type="text" name="attendance"><br><br>
-            <input type="submit" class="btn btn-outline-success" >
+            <input type="submit" name="add" value="ADD" class="btn btn-outline-success" >
+            <input type="submit" name="delete" value="DELETE" class="btn btn-outline-success" >
+            <input type="submit" name="update" value="UPDATE" class="btn btn-outline-success" >
 
           </form>
 
         </div>
 
     </div>
-    <script src="script.js"></script>
+   
   </body>
-</html>
+  
+</html><?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "miniproject";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+echo"connection successful";
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+  
+  if(isset($_POST["add"])){
+
+  $reg_no = $_POST["regno"];
+  $name = $_POST["name"];
+  $department = $_POST["department"];
+  $year = $_POST["year"];
+  $present = $_POST["present"];
+  $abscent = $_POST["abscent"];
+  $atttendance = $_POST["attendance"];
+
+    $sql = "INSERT into stdinfo (`s.id`, `name`, `regno`, `department`, `year`, `present`, `abscent`, `attendance`) VALUES (NULL, '$name', '$reg_no', '$department', '$year', '$present', '$abscent', '$atttendance') ";
+    if( mysqli_query($conn, $sql)){
+    
+      echo'<script>alert("record added sucessfully!");</script>';
+    
+     }
+mysqli_close($conn);  
+  }
+
+  if(isset($_POST["delete"])){
+    $reg_no = $_POST["regno"];
+    $department = $_POST["department"];
+
+    $sql = "DELETE FROM stdinfo WHERE regno='$reg_no' and department='$department' ";
+if( mysqli_query($conn, $sql)){
+    
+  echo'<script>alert("record deleted sucessfully!");</script>';
+    
+}
+ 
+mysqli_close($conn);
+  }
+
+  if(isset($_POST["update"])){
+
+ $reg_no = $_POST["regno"];
+$name = $_POST["name"];
+$department = $_POST["department"];
+$year = $_POST["year"];
+$present = $_POST["present"];
+$abscent = $_POST["abscent"];
+$atttendance = $_POST["attendance"];
+
+$sql = "UPDATE stdinfo SET name='$name',regno='$reg_no',department='$department',year='$year',present='$present',abscent='$abscent',attendance='$atttendance' WHERE regno='$reg_no'  ";
+if( mysqli_query($conn, $sql)){
+   
+  echo'<script>alert("record updated sucessfully!");</script>';
+    
+}
+mysqli_close($conn);  
+  }
+
+
+
+?>
+
