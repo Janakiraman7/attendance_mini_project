@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div>
-        <h1>TEACHER</h1>
-        <form action="teachers_login.php" method="post">
-            <input type="number" name="id" placeholder="Enter id" required><br><br>
+   
+       
+        <form id="teacherloginform" action="teachers_login.php" method="post">
+             <h1>TEACHER</h1>
+            <input type="number" name="id" placeholder="Enter id" required>
             <input type="password" name="password" placeholder="enter password" required>
             <p id="warning" style="color:red"></p>
-            <input type="submit" value="login" name="submit"> <br>
+            <input type="submit" value="login" name="submit" class="btn btn-outline-primary">
             
          </form>
          
-    </div>
-
+    
     
 </body>
 </html>

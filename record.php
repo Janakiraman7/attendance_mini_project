@@ -92,7 +92,7 @@ if (!$conn) {
   $abscent = $_POST["abscent"];
   $atttendance = $_POST["attendance"];
 
-    $sql = "INSERT into stdinfo (`s.id`, `name`, `regno`, `department`, `year`, `present`, `abscent`, `attendance`) VALUES (NULL, '$name', '$reg_no', '$department', '$year', '$present', '$abscent', '$atttendance') ";
+    $sql = "INSERT into stdinfo (`s.id`, `name`, `regno`, `department`, `year`, `present`, `abscent`, `attendance`) VALUES (NULL, '$name', '$reg_no', '$department', '$year', '$present', '$abscent', '$atttendance')  ";
     if( mysqli_query($conn, $sql)){
     
       echo'<script>alert("record added sucessfully!");</script>';

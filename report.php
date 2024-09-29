@@ -53,14 +53,14 @@
         </select>
       </div>
       <div>
-        <input type="submit" name="report" value="get" class="btn btn-outline-success">
+        <input type="submit" name="report" value="GET" class="btn btn-outline-success">
       </div>
     
     </div>
   </form>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" id="reporttable">
     
-      <tr>
+      <tr id="thead">
         <th>S.NO</th>
         <th>NAME</th>
         <th>REG.NO:</th>
@@ -86,7 +86,7 @@ if (!$conn) {
 if(isset($_POST["report"])){
 $department = $_POST["department"];
 $year = $_POST["year"];
-$sql="SELECT *  from stdinfo where year='$year' and department='$department'";
+$sql="SELECT *  from stdinfo where year='$year' and department='$department' ORDER BY regno ";
 $result=mysqli_query($conn,$sql);
 $numrows=mysqli_num_rows($result);
 $i=1;
