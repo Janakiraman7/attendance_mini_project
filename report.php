@@ -22,7 +22,7 @@
         </li>
         <li class="nav-item" role="presentation">
           
-          <a href="report.html"><button  class="nav-link active rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">REPORT</button></a>
+          <a href="report.php"><button  class="nav-link active rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">REPORT</button></a>
         </li>
         <li class="nav-item" role="presentation">
           
@@ -30,19 +30,21 @@
         </li>
       </ul>
     </nav>
+    <form action="report.php" method="post">
     <div id="selection">
-      <div><label for="year">YEAR:</label>
-    
+     <div>
         <select name="year">
+          <option selected disabled>SELECT YEAR</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
         </select>
       </div>
 
-      <div><label for="department">DEPARTMENT:</label>
-    
+     
+    <div>
         <select name="department">
+          <option selected disabled>SELECT DEPARTMENT</option>
           <option>bsc</option>
           <option>bca</option>
           <option>bcom</option>
@@ -50,7 +52,57 @@
           <option>bcm</option>
         </select>
       </div>
+      <div>
+        <input type="submit" name="report" value="get" class="btn btn-outline-success">
+      </div>
+    
     </div>
-    <h1>this is report page</h1>
+  </form>
+    <table class="table table-bordered table-striped">
+    
+      <tr>
+        <th>S.NO</th>
+        <th>NAME</th>
+        <th>REG.NO:</th>
+        <th>DEPARTMENT</th>
+        <th>YEAR</th>
+        <th>NO.OF DAYS PRESENT</th>
+        <th>NO.OF DAYS ABSCENT</th>
+        <th>ATTENDANCE %</th>
+      </tr>
+      
+      <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "miniproject";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+if(isset($_POST["report"])){
+$department = $_POST["department"];
+$year = $_POST["year"];
+$sql="SELECT *  from stdinfo where year='$year' and department='$department'";
+$result=mysqli_query($conn,$sql);
+$numrows=mysqli_num_rows($result);
+$i=1;
+if($numrows>0){
+  while($rows= mysqli_fetch_assoc($result)){
+  echo"<tr><td>".$i."</td><td>".$rows["name"]."</td><td>".$rows["regno"]."</td><td>".$rows["department"]."</td><td>".$rows["year"]."</td><td>".$rows["present"]."</td><td>".$rows["abscent"]."</td><td>".$rows["attendance"]."</td> </tr>";
+  $i++;
+  }
+ 
+}
+
+}
+
+
+mysqli_close($conn);  
+?>
+    </table>
   </body>
 </html>

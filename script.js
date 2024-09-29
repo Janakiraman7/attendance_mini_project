@@ -15,7 +15,7 @@ $(document).ready(function(){
 
                     if(data['status']=='ok')
                     {
-                        document.getElementById("hidetable").style.display="block";
+                       
                         $('#m').text(data.result1.day);
                         $('#m1').text(data.result1.period1);
                         $('#m2').text(data.result1.period2); 

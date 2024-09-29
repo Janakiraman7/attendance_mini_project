@@ -23,7 +23,7 @@
           </li>
           <li class="nav-item" role="presentation">
             
-            <a href="report.html"><button  class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">REPORT</button></a>
+            <a href="report.php"><button  class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">REPORT</button></a>
           </li>
           <li class="nav-item" role="presentation">
             
@@ -32,7 +32,7 @@
         </ul>
       </nav>
     
-    <div class="recordformcontainer">
+    
       
         <div id="recordformcontent">
           
@@ -55,25 +55,27 @@
             <input type="number" name="present"><br><br>
             <input type="number" name="abscent"><br><br>
             <input type="text" name="attendance"><br><br>
-            <input type="submit" name="add" value="ADD" class="btn btn-outline-success" >
-            <input type="submit" name="delete" value="DELETE" class="btn btn-outline-success" >
-            <input type="submit" name="update" value="UPDATE" class="btn btn-outline-success" >
-
+            <div id="crudbtn">
+            <input type="submit" name="add" value="ADD" class="btn btn-outline-primary" >
+            <input type="submit" name="delete" value="DELETE" class="btn btn-outline-primary" >
+            <input type="submit" name="update" value="UPDATE" class="btn btn-outline-primary" >
+            </div>
           </form>
 
         </div>
 
-    </div>
+    
    
   </body>
   
-</html><?php
+</html>
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "miniproject";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-echo"connection successful";
+
 // Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
