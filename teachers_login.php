@@ -14,7 +14,7 @@
 <body>
    
        
-        <form id="teacherloginform" action="teachers_login.php" method="post">
+        <form id="loginform" action="teachers_login.php" method="post">
              <h1>TEACHER</h1>
             <input type="number" name="id" placeholder="Enter id" required>
             <input type="password" name="password" placeholder="enter password" required>

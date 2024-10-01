@@ -27,7 +27,7 @@ body{
   top: 20vh;
   z-index: 0.9;
 }
-td{
+td,span{
   text-transform: uppercase;
 }
 
@@ -43,7 +43,7 @@ nav {
   z-index: 1; 
 }
 
-a {
+a{
   text-decoration: none;
 }
 
@@ -76,7 +76,7 @@ a {
   column-gap: 3vw;
   justify-content: center;
 }
-#teacherloginform{
+#loginform{
   width: 30vw;
   height: 50vh;
   background-color:white;
@@ -85,7 +85,12 @@ a {
   position: fixed;
   display: grid;
   place-items: center;
-  border-radius: 2rem;
-  opacity: 0.8;
-  
+  border-radius: 1rem;
+}
+.stdinfo{
+  width: 40vw;
+  height: 80vh;
+  inset: 0px;
+  margin: auto;
+  position: fixed;
 }
