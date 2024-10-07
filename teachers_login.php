@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +35,7 @@
 <?php
 if (isset($_POST['submit'])){
 $id = $_POST["id"];
+$_SESSION["id"]=$id;
 $inputpassword = $_POST["password"];
 
 $servername = "localhost";

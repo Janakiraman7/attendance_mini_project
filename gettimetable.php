@@ -1,10 +1,11 @@
 <?php
-    $year=$_POST['yr'];
-    $department=$_POST['dept'];
+
+    session_start();
     
+    $id=$_SESSION["id"];
    
     $con=mysqli_connect("localhost","root","","miniproject");
-    $sql="SELECT * from timetable WHERE year=$year and department='$department' "  ;
+    $sql="SELECT * from timetable WHERE id=$id "  ;
     $result=mysqli_query($con,$sql);
     $data=array();
     $count=mysqli_num_rows($result);

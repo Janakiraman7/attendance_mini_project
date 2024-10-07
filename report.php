@@ -53,7 +53,7 @@
         </select>
       </div>
       <div>
-        <input type="submit" name="report" value="GET" class="btn btn-outline-success">
+        <input type="submit" name="report"  value="GET" class="btn btn-outline-success">
       </div>
     
     </div>
@@ -84,25 +84,29 @@ if (!$conn) {
 }
 
 if(isset($_POST["report"])){
-$department = $_POST["department"];
-$year = $_POST["year"];
-$sql="SELECT *  from stdinfo where year='$year' and department='$department' ORDER BY regno ";
-$result=mysqli_query($conn,$sql);
-$numrows=mysqli_num_rows($result);
-$i=1;
-if($numrows>0){
-  while($rows= mysqli_fetch_assoc($result)){
-  echo"<tr><td>".$i."</td><td>".$rows["name"]."</td><td>".$rows["regno"]."</td><td>".$rows["department"]."</td><td>".$rows["year"]."</td><td>".$rows["present"]."</td><td>".$rows["abscent"]."</td><td>".$rows["attendance"]."</td> </tr>";
-  $i++;
+try{
+  $department = $_POST["department"];
+  $year = $_POST["year"];
+  $sql="SELECT *  from stdinfo where year='$year' and department='$department' ORDER BY regno ";
+  $result=mysqli_query($conn,$sql);
+  $numrows=mysqli_num_rows($result);
+  $i=1;
+  if($numrows>0){
+    while($rows= mysqli_fetch_assoc($result)){
+    echo"<tr><td>".$i."</td><td>".$rows["name"]."</td><td>".$rows["regno"]."</td><td>".$rows["department"]."</td><td>".$rows["year"]."</td><td>".$rows["present"]."</td><td>".$rows["abscent"]."</td><td>".$rows["attendance"]."</td> </tr>";
+    $i++;
+    }
+   
   }
- 
+}
+catch(Exception $e) {
+  echo"error";
 }
 
 }
-
-
 mysqli_close($conn);  
 ?>
     </table>
+    
   </body>
 </html>

@@ -1,16 +1,7 @@
 $(document).ready(function(){
-    $("#getbtn").click(function(){
-        
-            var year = $('#year').val();
-            var department = $('#department').val();
-            
             $.ajax({
                 url:"gettimetable.php",
-                type:"POST",
                 dataType:"json",
-                data:{dept:department,yr:year},
-                
-            
                 success:function(data){
 
                     if(data['status']=='ok')
@@ -56,5 +47,6 @@ $(document).ready(function(){
                 }
                 
             });
-    });
+
  });
+ 

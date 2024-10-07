@@ -18,6 +18,7 @@
         font-size:1.5rem;
         color:green;
         font-family:bold;
+        text-transform: uppercase;
       }
       
     </style>
