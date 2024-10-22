@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
             $.ajax({
                 url:"gettimetable.php",
                 dataType:"json",
@@ -48,5 +49,10 @@ $(document).ready(function(){
                 
             });
 
+
+            
+
+
  });
+ 
  

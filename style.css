@@ -95,3 +95,13 @@ a{
   margin: auto;
   position: fixed;
 }
+#attendancedetails{
+  width: 40vw;
+  height: 50vh;
+  inset: 0px;
+  margin: auto;
+  position: fixed;
+ 
+  display: grid;
+  place-items: center;
+}
