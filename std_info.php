@@ -13,12 +13,19 @@
     <style>
       label{
         font-size:1.5rem;
+        width: 30rem;
+        height:2rem;
+        margin-top:1rem;
+       
       }
-      span{
-        font-size:1.5rem;
+      .displayarea{
+        font-size:1.4rem;
+        width: 30rem;
+        height:2rem;
+        margin-top:1.2rem;
+        margin-left:1rem;
+        text-transform:uppercase;
         color:green;
-        font-family:bold;
-        text-transform: uppercase;
       }
       
     </style>
@@ -47,15 +54,26 @@ $result = mysqli_query($conn, $sql);
 $count = mysqli_num_rows($result);
 $row = mysqli_fetch_assoc($result);
 
-    echo"<div class='stdinfo'><center>
-    <label>REGISTER NUMBER:</label> <span>".$row["regno"]."</span><br><br>
-    <label>NAME:</label> <span>".$row["name"]."</span><br><br>
-    <label>DEPARTMENT:</label><span>".$row["department"]."</span><br><br>
-    <label>YEAR:</label> <span>".$row["year"]."</span><br><br>
-    <label>NO.OF DAYS PRESENT:</label> <span>".$row["present"]."</span><br><br>
-    <label>NO.OF DAYS ABSCENT:</label> <span>".$row["abscent"]."</span><br><br> 
-    <label>ATTENDANCE % :</label> <span>".$row["attendance"]."</span><br><br></center>
+    echo"
+  <div  id='recordformcontent'>
+    <label>NAME:</label> <br>
+    <label>REGISTER NUMBER:</label> <br>
+    <label>DEPARTMENT:</label><br>
+    <label>YEAR:</label><br>
+    <label>CLASSES PRESENT:</label><br>
+    <label>CLASSES ABSCENT:</label> <br>
+    <label>ATTENDANCE % :</label> <br>
+  </div>";
+  echo"   <div id='recordforminput' >
+     <div class='displayarea'>".$row["name"]."</div>
+     <div class='displayarea'>".$row["regno"]."</div>
+    <div class='displayarea'>".$row["department"]."</div>
+     <div class='displayarea'>".$row["year"]."</div>
+     <div class='displayarea'>".$row["present"]."</div>
+     <div class='displayarea'>".$row["abscent"]."</div>
+     <div class='displayarea'>".$row["attendance"]."</div> 
      </div>";
+
   if($count==0){
    
     header("Location:std_login.html");

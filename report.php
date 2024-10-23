@@ -66,8 +66,8 @@
         <th>REG.NO:</th>
         <th>DEPARTMENT</th>
         <th>YEAR</th>
-        <th>NO.OF DAYS PRESENT</th>
-        <th>NO.OF DAYS ABSCENT</th>
+        <th>CLASSES PRESENT</th>
+        <th>CLASSSES ABSCENT</th>
         <th>ATTENDANCE %</th>
       </tr>
       
