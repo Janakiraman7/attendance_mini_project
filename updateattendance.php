@@ -11,9 +11,9 @@ if (!$conn) {
 }
 $regno=$_POST["regno"];
 $date=$_POST["date"];
-$period=$_POST["period"];       
+$period='period'.$_POST["period"];       
 $status=$_POST["status"];
-$sql="UPDATE attendance SET status=$status where regno='$regno' AND date='$date' AND period='$period'";
+$sql="UPDATE attendance SET  $period= $status where regno='$regno' AND date='$date' ";
 mysqli_query($conn,$sql);
 mysqli_close($conn);
 

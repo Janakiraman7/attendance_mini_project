@@ -66,8 +66,8 @@
         <th>REG.NO:</th>
         <th>DEPARTMENT</th>
         <th>YEAR</th>
-        <th>CLASSES PRESENT</th>
-        <th>CLASSSES ABSCENT</th>
+        <th>NO.OF DAYS PRESENT</th>
+        <th>TOTAL NO.OF DAYS </th>
         <th>ATTENDANCE %</th>
       </tr>
       
@@ -93,7 +93,8 @@ try{
   $i=1;
   if($numrows>0){
     while($rows= mysqli_fetch_assoc($result)){
-    echo"<tr><td>".$i."</td><td>".$rows["name"]."</td><td>".$rows["regno"]."</td><td>".$rows["department"]."</td><td>".$rows["year"]."</td><td>".$rows["present"]."</td><td>".$rows["abscent"]."</td><td>".$rows["attendance"]."</td> </tr>";
+      $total= $rows["abscent"]+$rows["present"];
+    echo"<tr><td>".$i."</td><td>".$rows["name"]."</td><td>".$rows["regno"]."</td><td>".$rows["department"]."</td><td>".$rows["year"]."</td><td>".$rows["present"]."</td><td>".$total."</td><td>".$rows["attendance"]."</td> </tr>";
     $i++;
     }
    

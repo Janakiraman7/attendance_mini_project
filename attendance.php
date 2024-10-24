@@ -77,9 +77,9 @@ if(isset($_POST["attendance"])){
   if($numrows>0){
     while($rows= mysqli_fetch_assoc($result)){
       $regno=$rows["regno"];
-      $add = "INSERT INTO attendance (regno,date,period,status) VALUES ('$regno','$date','$period','0')"; 
+      $add = "INSERT INTO attendance (regno,date) VALUES ('$regno','$date')"; 
       mysqli_query($conn,$add);
-    echo"<tr><td>".$i."</td><td>".$rows["name"]."</td><td>"."<input name='status' id='status' data-status='1' data-regno='$regno' data-date='$date'data-period='$period' type='radio'>"."</td><td>"."<input name='status' id='status' data-status='0' data-regno='$regno' data-date='$date'data-period='$period' type='radio'>"."</td></tr>";
+    echo"<tr><td>".$i."</td><td>".$rows["name"]."</td><td>"."<input name='$regno' id='status' data-status='1' data-regno='$regno' data-date='$date'data-period='$period' type='radio'>"."</td><td>"."<input name='$regno' id='status' data-status='0' data-regno='$regno' data-date='$date'data-period='$period' type='radio'>"."</td></tr>";
     $i++;
     }
    
