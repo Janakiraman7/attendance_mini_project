@@ -103,10 +103,8 @@ var status=$(this).data('status');
 $.ajax({
 url:"updateattendance.php",
 method:"POST",
-data:{regno:regno,date:date,period:period,status:status},
-success:function(){
-  alert("attendance marked");
-}
+data:{regno:regno,date:date,period:period,status:status}
+
 });
 
 

@@ -10,6 +10,12 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        .form-control{ width: 17rem;}
+        option{
+            text-transform: uppercase;
+        }
+      </style>
     
 </head>
 <body>
@@ -17,9 +23,10 @@
     
     <form id="loginform" action="std_info.php" method="post">
         <h1>STUDENT</h1>
-        <input type="text" name="regnum"id="regnum" placeholder="ENTER REGISTER NO." required>
-        <select  name="department" id="department"><OPtion selected disabled>SELECT DEPTARTMENT</OPtion><option value="bsc">bsc</option><option value="bca">bca</option><option value="bcm">bcm</option><option value="bcom">bcom</option><option value="bba">bba</option></select>
-       <input type="submit" class="btn btn-outline-success">
+        <input class="form-control" type="text" name="regnum"id="regnum" placeholder="ENTER REGISTER NO." required>
+        <select class="form-control"  name="department" id="department"><option selected disabled>SELECT DEPTARTMENT</OPtion><option value="bsc">BSC</option><option value="bca">BCA</option><option value="bcm">BCM</option><option value="bcom">BCOM</option><option value="bba">BBA</option></select>
+        <select class="form-control" name="month" id="month"><option disabled selected>SELECT MONTH</option><option>january</option><option>febuary</option><option>march</option><option>april</option><option>may</option><option>june</option><option>july</option><option>august</option><option>september</option><option>october</option><option>november</option><option>december</option></select>
+       <input type="submit" class="btn btn-outline-primary">
     </form>
 
 
