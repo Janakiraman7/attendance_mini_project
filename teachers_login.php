@@ -14,14 +14,17 @@ session_start();
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        .form-control{ width: 17rem;}
+      </style>
 </head>
 <body>
    
        
         <form id="loginform" action="teachers_login.php" method="post">
              <h1>TEACHER</h1>
-            <input type="number" name="id" placeholder="Enter id" required>
-            <input type="password" name="password" placeholder="enter password" required>
+            <input type="number" name="id" placeholder="ENTER ID" class="form-control" required>
+            <input type="password" name="password" placeholder="ENTER PASSWORD"  class="form-control" required>
             <p id="warning" style="color:red"></p>
             <input type="submit" value="login" name="submit" class="btn btn-outline-primary">
             

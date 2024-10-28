@@ -27,7 +27,7 @@
         text-transform:uppercase;
         color:green;
       }
-      h1{
+      h2{
         text-transform:uppercase;
         padding:1rem 1rem 1rem 1rem;
       }
@@ -39,7 +39,7 @@
  
 <?php
 
-try{
+
 $reg_no = $_POST["regnum"];
 $dept = $_POST["department"];
 $month =$_POST["month"];
@@ -110,12 +110,6 @@ if (!$conn) {
 
 $sql = "SELECT * FROM stdinfo WHERE regno='$reg_no' and department='$dept'  ";
 $result = mysqli_query($conn, $sql);
-$count = mysqli_num_rows($result);
-if($count==0){
-   
-  header("Location:std_login.html");
- 
-}
 $row = mysqli_fetch_assoc($result);
 
 
@@ -133,7 +127,7 @@ if($no_of_days_present != 0 && $total_no_of_days!=0){
 
 $attendance = $no_of_days_present/$total_no_of_days *100;
 
-echo "<center><h1>".$month." month attendance report</h1></center>";
+echo "<center><h2>".$month." month attendance report</h2></center>";
   echo"
   <div  id='recordformcontent'>
     <label>NAME:</label> <br>
@@ -159,12 +153,6 @@ else{
   header("Location:std_login.html"); 
 }
   
-}
-  catch(EXCEPTION $e){
-
-    echo "no results found".$e;
-  }
-
 
 mysqli_close($conn);
 

@@ -10,24 +10,32 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .form-control{
+        margin:none;
+      }
+      h4{
+        margin-bottom:2rem;
+      }
+    </style>
   </head>
   <body>
     
       <nav>
         <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
           <li class="nav-item" role="presentation">
-            <a href="timetable.html"><button class="nav-link  rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">TIMETABLE</button></a>
+            <a href="timetable.html"><button class="nav-link  rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">TEACHER'S TIMETABLE</button></a>
           </li>
           <li class="nav-item" role="presentation">
-           <a href="attendance.html"><button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">ATTENDANCE</button></a>
-          </li>
-          <li class="nav-item" role="presentation">
-            
-            <a href="report.php"><button  class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">REPORT</button></a>
+           <a href="attendance.html"><button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">STUDENT ATTENDANCE</button></a>
           </li>
           <li class="nav-item" role="presentation">
             
-            <a href="record.php"><button  class="nav-link active rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">RECORDS</button></a>
+            <a href="report.html"><button  class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">ATTENDANCE REPORT</button></a>
+          </li>
+          <li class="nav-item" role="presentation">
+            
+            <a href="record.php"><button  class="nav-link active rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">STUDENT RECORD</button></a>
           </li>
         </ul>
       </nav>
@@ -36,25 +44,27 @@
       
         <div id="recordformcontent">
           
-            <label>REGISTER NUMBER:</label> <br><br>
-          <label>NAME:</label> <br><br>
-          <label>DEPARTMENT:</label><br><br>
-          <label>YEAR:</label><br><br>
-          <label>NO.OF CLASSES PRESENT:</label> <br><br>
-          <label>NO.OF CLASSES ABSCENT:</label><br><br> 
-          <label>ATTENDANCE % :</label> <br><br>
+         <h4>REGISTER NUMBER:</h1>
+          <h4>NAME:</h4>
+          <h4>DEPARTMENT:</h4>
+          <h4>YEAR:</h4>
+        
            
         </div>
 
         <div id="recordforminput">
           <form id="recordform" action="record.php" method="post">
-            <input type="text" name="regno" required><br><br>
-            <input type="text" name="name" requiered><br><br>
-            <input type="text" name="department" required><br><br>
-            <input type="number" name="year" required><br><br>
-            <input type="number" name="present"><br><br>
-            <input type="number" name="abscent"><br><br>
-            <input type="text" name="attendance"><br><br>
+            <input class="form-control" type="text" name="regno" required><br>
+            <input  class="form-control" type="text" name="name" requiered><br>
+            <select class="form-control"  name="department" id="department"><option value="bsc">BSC</option><option value="bca">BCA</option><option value="bcm">BCM</option><option value="bcom">BCOM</option><option value="bba">BBA</option></select><br>
+ 
+            <select name="year" class="form-control">
+            
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select><br>
+           
             <div id="crudbtn">
             <input type="submit" name="add" value="ADD" class="btn btn-outline-primary" >
             <input type="submit" name="delete" value="DELETE" class="btn btn-outline-primary" >
@@ -88,11 +98,9 @@ if (!$conn) {
   $name = $_POST["name"];
   $department = $_POST["department"];
   $year = $_POST["year"];
-  $present = $_POST["present"];
-  $abscent = $_POST["abscent"];
-  $atttendance = $_POST["attendance"];
+  
 
-    $sql = "INSERT into stdinfo (`sid`, `name`, `regno`, `department`, `year`, `present`, `abscent`, `attendance`) VALUES (NULL, '$name', '$reg_no', '$department', '$year', '$present', '$abscent', '$atttendance')  ";
+    $sql = "INSERT into stdinfo (`sid`, `name`, `regno`, `department`, `year`) VALUES (NULL, '$name', '$reg_no', '$department', '$year')  ";
     if( mysqli_query($conn, $sql)){
     
       echo'<script>alert("record added sucessfully!");</script>';
@@ -121,11 +129,9 @@ mysqli_close($conn);
 $name = $_POST["name"];
 $department = $_POST["department"];
 $year = $_POST["year"];
-$present = $_POST["present"];
-$abscent = $_POST["abscent"];
-$atttendance = $_POST["attendance"];
 
-$sql = "UPDATE stdinfo SET name='$name',regno='$reg_no',department='$department',year='$year',present='$present',abscent='$abscent',attendance='$atttendance' WHERE regno='$reg_no'  ";
+
+$sql = "UPDATE stdinfo SET name='$name',regno='$reg_no',department='$department',year='$year' WHERE regno='$reg_no'  ";
 if( mysqli_query($conn, $sql)){
    
   echo'<script>alert("record updated sucessfully!");</script>';

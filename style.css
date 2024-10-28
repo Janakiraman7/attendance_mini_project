@@ -53,27 +53,27 @@ a{
 #recordformcontent{
   width: 20vw;
   height:70vh ;
-  top: 20vh;
+  top: 18vh;
   left: 33vw;
   position: absolute;
+  
   
 }
 #recordforminput{
   width:20vw ;
-  height: 75vh;
+  height: 70vh;
   top: 18vh;
   left: 53vw;
   position: absolute;
+ 
   
   
 }
 #crudbtn{
   display: flex;
-  width: 30vw;
-  height: 7vh;
-  position: absolute;
-  bottom: 2vh;
-  right: 8vw;
+  position:relative;
+  top: 5vh;
+  right: 10vw;
   column-gap: 3vw;
   justify-content: center;
 }
