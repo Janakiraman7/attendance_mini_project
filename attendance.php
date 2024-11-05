@@ -17,7 +17,10 @@
         display:grid;
         place-items:center;
       }
-     
+     .table{
+      width:50vw;
+     }
+  
     </style>
 </head>
 <body>
@@ -77,12 +80,15 @@ if(isset($_POST["attendance"])){
   if($numrows>0){
     while($rows= mysqli_fetch_assoc($result)){
       $regno=$rows["regno"];
-      $add = "INSERT INTO attendance (regno,date) VALUES ('$regno','$date')"; 
+      $add = "INSERT INTO attendance (regno,date,year) VALUES ('$regno','$date',$year)"; 
       mysqli_query($conn,$add);
-    echo"<tr><td>".$i."</td><td>".$rows["name"]."</td><td>"."<input name='$regno' id='status' data-status='1' data-regno='$regno' data-date='$date'data-period='$period' type='radio'>"."</td><td>"."<input name='$regno' id='status' data-status='0' data-regno='$regno' data-date='$date'data-period='$period' type='radio'>"."</td></tr>";
+    echo"<tr><td>".$i."</td><td>".$rows["name"]."</td><td>"."<center><input style='width:1.5rem;height:1.5rem;' name='$regno' id='status' data-status='1' data-regno='$regno' data-date='$date'data-period='$period' type='radio'></center>"."</td><td>"."<center><input style='width:1.5rem;height:1.5rem;' name='$regno' id='status' data-status='0' data-regno='$regno' data-date='$date'data-period='$period' type='radio'></center>"."</td></tr>";
     $i++;
     }
    
+  }
+  else{
+   header("location:attendance.html");
   }
 }
 

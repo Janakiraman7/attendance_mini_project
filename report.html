@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="style.css" />
     <style>
         .form-control{ width: 17rem;}
+        option{
+          text-transform: uppercase;
+        }
+        .btn{
+          width: 6rem;
+        }
       </style>
 </head>
 <body>
@@ -36,24 +42,23 @@
       </nav>
       <form action="report.php" method="post">
       <div id="attendancedetails">
-       <div>
+    
+      <div>
+          <select name="department" class="form-control">
+            <option selected disabled>SELECT DEPARTMENT</option>
+            <option>BSC</option>
+            <option>BCA</option>
+            <option>BCOM</option>
+            <option>BBA</option>
+            <option>BCM</option>
+          </select>
+        </div>
+        <div>
           <select name="year" class="form-control">
             <option selected disabled>SELECT YEAR</option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
-          </select>
-        </div>
-  
-       
-      <div>
-          <select name="department" class="form-control">
-            <option selected disabled>SELECT DEPARTMENT</option>
-            <option>bsc</option>
-            <option>bca</option>
-            <option>bcom</option>
-            <option>bba</option>
-            <option>bcm</option>
           </select>
         </div>
         

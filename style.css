@@ -5,18 +5,7 @@
 body{
   background-color:powderblue;
 }
-#selection {
-  width: 100vw;
-  height: 8vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 2rem;
-  position:fixed;
-  top: 10vh;
-  z-index: 1;
-  
-}
+
 #timetable{
   position:fixed;
   top: 25vh;
@@ -24,7 +13,7 @@ body{
 }
 #reporttable{
   position: relative;
-  top: 20vh;
+  top: 11vh;
   z-index: 0.9;
 }
 td,th{
@@ -40,6 +29,7 @@ nav {
   align-items: center;
   width: 100vw;
   height: 10vh;
+  top:0.3rem;
   position: fixed;
   z-index: 1; 
 }

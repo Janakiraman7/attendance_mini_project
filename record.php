@@ -66,9 +66,9 @@
           </select><br>
            
             <div id="crudbtn">
-            <input type="submit" name="add" value="ADD" class="btn btn-outline-primary" >
-            <input type="submit" name="delete" value="DELETE" class="btn btn-outline-primary" >
-            <input type="submit" name="update" value="UPDATE" class="btn btn-outline-primary" >
+            <input type="submit" name="add" value="ADD" class="btn btn-outline-success" >
+            <input type="submit" name="delete" value="DELETE" class="btn btn-outline-danger" >
+            <input type="submit" name="update" value="UPDATE" class="btn btn-outline-warning" >
             </div>
           </form>
 

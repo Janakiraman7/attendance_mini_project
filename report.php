@@ -130,7 +130,7 @@ if(isset($_POST["report"])){
 
 $reg_no=$rows["regno"];
  // query to get no of days present for particular month
-$query= "SELECT SUM(status) AS present ,count(status) AS totaldays from attendance where regno='$reg_no' and month(date)=$month_no";
+$query= "SELECT SUM(status) AS present ,count(status) AS totaldays  from attendance where regno='$reg_no' and month(date)=$month_no and year=$year";
 $present_total=mysqli_query($conn,$query);
 $no_present_total=mysqli_fetch_assoc($present_total);
 $no_of_days_present= $no_present_total["present"];
@@ -146,6 +146,9 @@ $attendance = $no_of_days_present/$total_no_of_days *100;
 echo"<tr><td>".$i."</td><td>".$rows["name"]."</td><td>".$rows["regno"]."</td><td>".$rows["department"]."</td><td>".$rows["year"]."</td><td>".$no_of_days_present."</td><td>".$total_no_of_days."</td><td>".$attendance."</td> </tr>";
 $i++;
  }
+ else{
+ continue;
+}
 
 }
 
