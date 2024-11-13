@@ -16,6 +16,14 @@ session_start();
     <link rel="stylesheet" href="style.css" />
     <style>
         .form-control{ width: 17rem;}
+        body{
+      background-image:url("teacherlogin.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      opacity: 0.9;
+      }
+      
       </style>
 </head>
 <body>

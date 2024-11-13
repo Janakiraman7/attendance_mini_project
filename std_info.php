@@ -25,11 +25,17 @@
         margin-top:1.2rem;
         margin-left:1rem;
         text-transform:uppercase;
-        color:green;
+        color:white;
       }
       h2{
         text-transform:uppercase;
         padding:1rem 1rem 1rem 1rem;
+      }
+      body{
+      background-image:url("report.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
       }
       
     </style>

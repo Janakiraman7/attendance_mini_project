@@ -16,7 +16,15 @@
       }
       h4{
         margin-bottom:2rem;
+        color:white;
       }
+      body{
+      background-image:url("sturecord.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    
     </style>
   </head>
   <body>
@@ -40,7 +48,7 @@
         </ul>
       </nav>
     
-    
+  
       
         <div id="recordformcontent">
           
@@ -74,7 +82,7 @@
 
         </div>
 
-    
+        
    
   </body>
   

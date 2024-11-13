@@ -20,6 +20,13 @@
      .table{
       width:50vw;
      }
+     body{
+      background-image:url("attendance.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+        
+        background-attachment: fixed;
+    }
   
     </style>
 </head>
