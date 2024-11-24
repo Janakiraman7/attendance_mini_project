@@ -35,7 +35,7 @@
     <table class="table table-bordered table-striped" id="reporttable">
       <tr >
         <td colspan="8">
-        <center><h2><?php echo$_POST["month"]; ?> MONTH ATTENDANCE REPORT</h2></center>
+        <center><h2><?php if(!$_POST["month"]){ header("Location:report.html");} else{echo$_POST["month"]; }?> MONTH ATTENDANCE REPORT</h2></center>
         </td>
       </tr>
     

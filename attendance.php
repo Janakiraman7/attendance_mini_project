@@ -78,7 +78,11 @@ if(isset($_POST["attendance"])){
   $department = $_POST["department"];
   $year = $_POST["year"];
   $date=$_POST["date"];
+ if( !$_POST["period"]){
+  header("location:attendance.html");
+ }else{
   $period=$_POST["period"];
+ }
   
   $sql="SELECT *  from stdinfo where year='$year' and department='$department' ORDER BY regno ";
   $result=mysqli_query($conn,$sql);

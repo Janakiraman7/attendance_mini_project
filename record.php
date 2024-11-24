@@ -64,17 +64,14 @@
           <form id="recordform" action="record.php" method="post">
             <input class="form-control" type="text" name="regno" required><br>
             <input  class="form-control" type="text" name="name" requiered><br>
-            <select class="form-control"  name="department" id="department"><option value="bsc">BSC</option><option value="bca">BCA</option><option value="bcm">BCM</option><option value="bcom">BCOM</option><option value="bba">BBA</option></select><br>
+            <input class="form-control" tpye="text" name="department" id="department" required><br>
  
-            <select name="year" class="form-control">
+            <input type="number" name="year" class="form-control" required><br>
             
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select><br>
+            
            
             <div id="crudbtn">
-            <input type="submit" name="add" value="ADD" class="btn btn-outline-success" >
+            <input type="submit" name="add" value="ADD" class="btn btn-outline-success">
             <input type="submit" name="delete" value="DELETE" class="btn btn-outline-danger" >
             <input type="submit" name="update" value="UPDATE" class="btn btn-outline-warning" >
             </div>
